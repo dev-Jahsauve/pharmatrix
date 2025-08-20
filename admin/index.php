@@ -1,5 +1,9 @@
 <?php
+require_once 'service.php';
 require_once 'routes.php';
+
+include('views/erreur.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -29,22 +33,46 @@ require_once 'routes.php';
 
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="index.php?view=dashboard"><i class="fas fa-home"></i> <span class="menu-text">Dashboard</span></a>
+                        <a href="index.php?view=dashboard">
+                            <i class="fas fa-home"></i> 
+                            <span class="menu-text">Dashboard</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="index.php?view=commande"><i class="fas fa-shopping-cart"></i> <span class="menu-text">Commandes</span></a>
+                        <a href="index.php?view=pharmacie">
+                            <i class="fas fa-plus-circle"></i> 
+                            <span class="menu-text">Pharmacies</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="index.php?view=all_medicament"><i class="fas fa-capsules"></i> <span class="menu-text">Tous les Medicaments</span></a>
+                        <a href="index.php?view=all_medicament">
+                            <i class="fas fa-capsules"></i> 
+                            <span class="menu-text">Tous les Medicaments</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="index.php?view=medicament"><i class="fas fa-capsules"></i> <span class="menu-text">Medicament</span></a>
+                        <a href="index.php?view=medicament">
+                            <i class="fas fa-capsules"></i> 
+                            <span class="menu-text">Medicaments</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="index.php?view=user"><i class="fas fa-users"></i> <span class="menu-text">Utilisation</span></a>
+                        <a href="index.php?view=user">
+                            <i class="fas fa-users"></i> 
+                            <span class="menu-text">Utilisateurs</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="index.php?view=settings"><i class="fas fa-cog"></i> <span class="menu-text">Paramètres</span></a>
+                        <a href="index.php?view=coupon">
+                            <i class="fas fa-ticket"></i> 
+                            <span class="menu-text">Coupons</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.php?view=settings">
+                            <i class="fas fa-cog"></i> 
+                            <span class="menu-text">Paramètres</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -89,13 +117,21 @@ require_once 'routes.php';
                                     <span class="user-name">Admin</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profil</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Paramètres</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="index.php?view=settings">
+                                            <i class="fas fa-cog me-2"></i>
+                                            Paramètres
+                                        </a>
+                                    </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="fas fa-sign-out-alt me-2"></i>Déconnexion</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="controller/deconnexionController.php">
+                                            <i class="fas fa-sign-out-alt me-2"></i>
+                                            Déconnexion
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
